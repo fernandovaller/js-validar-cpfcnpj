@@ -1,9 +1,10 @@
-function sanitize(value) {
+function sanitize (value) {
 	return value.replace(/\W/g, '');
-}
+};
 
-function addAlert(el, msg = 'Inválido') {
+function addAlert(el, msg) {
 	var input = $(el);
+	msg = msg !== 'undefined' ? msg : 'Inválido';
 	var group = $(input).parent();
 	if (input) {
 		group.addClass('has-error');
@@ -15,8 +16,9 @@ function addAlert(el, msg = 'Inválido') {
 	}
 }
 
-function addAlertIcon(el, msg = 'Inválido') {
+function addAlertIcon(el, msg) {
 	var input = $(el);
+	msg = msg !== 'undefined' ? msg : 'Inválido';
 	var group = $(input).parent();
 	if (input) {
 		group.addClass('has-error');
